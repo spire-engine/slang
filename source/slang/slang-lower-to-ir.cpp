@@ -3183,6 +3183,10 @@ struct StmtLoweringVisitor : StmtVisitor<StmtLoweringVisitor>
         {
             getBuilder()->addLoopControlDecoration(inst, kIRLoopControl_Unroll);
         }
+        else if (stmt->FindModifier<LoopAttribute>())
+        {
+            getBuilder()->addLoopControlDecoration(inst, kIRLoopControl_Loop);
+        }
         // TODO: handle other cases here
     }
 

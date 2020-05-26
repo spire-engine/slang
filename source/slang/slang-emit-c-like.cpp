@@ -2372,7 +2372,12 @@ void CLikeSourceEmitter::emitRegion(Region* inRegion)
                             m_writer->emit("[unroll]\n");
                         }
                         break;
-
+                    case kIRLoopControl_Loop:
+                        if (getSourceStyle() == SourceStyle::HLSL)
+                        {
+                            m_writer->emit("[loop]\n");
+                        }
+                        break;
                     default:
                         break;
                     }
