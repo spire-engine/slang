@@ -27,4 +27,11 @@ jobs:
     - name: test
       run: 
         CONFIGURATION=${{matrix.configuration}}
+        if [ ${{matrix.compiler}} == 'gcc' ] && [ ${{matrix.configuration} == 'release' ]; then
+          SLANG_TEST_CATEGORY=full
+          SLANG_DEPLOY=true
+        else
+          SLANG_TEST_CATEGORY=smoke
+          SLANG_DEPLOY=false
+        fi
         source ./github_test.sh
