@@ -16,6 +16,9 @@ jobs:
         compiler: ['gcc', 'clang']
     steps:
     - uses: actions/checkout@v2.3.4
+      with:
+        submodules: 'true'
+        fetch-depth: '0'
     - name: build
       run: 
         CC=${{matrix.compiler}}

@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-git submodule init
-git submodule update
 # Get premake
 wget https://github.com/shader-slang/slang-binaries/blob/master/premake/premake-5.0.0-alpha13/bin/linux-64/premake5?raw=true -O premake5
 chmod u+x premake5
